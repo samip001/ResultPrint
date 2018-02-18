@@ -23,13 +23,14 @@ else{
 }
 
 if (isset($_POST['valueeducation'])) {
+	$resultid = $_POST['resultid'];
 	if($others->checkSameResult('value_education',$_POST['resultid']) > 0){
 		$error = "Same Result for Attendace Already Exists. Try Next One";
 	}else{
 		$fields = array('result_id' =>$_POST['resultid'],'discipline'=>$_POST['discipline'],'punctuality'=>$_POST['punctual'],'communication_skill'=>$_POST['communication'],'cleanliness'=>$_POST['cleanliness'],'sports'=>$_POST['sports'] ,'interpersonal'=>$_POST['interpersonal'],'verbal'=>$_POST['verbal'],'creativity'=>$_POST['creativity'],'assignment'=>$_POST['assignment'],'motivation'=>$_POST['motivation']);
 		$others->saveStudentOthersResult('value_education',$fields);
 
-		header('Location:listresult.php?classname='.$classname.'&terminal='.$terminal.'&year='.$year);	
+		header('Location:print.php?result='.$resultid);	
 		exit();
 	}
 }
@@ -48,8 +49,7 @@ if (isset($_POST['valueeducation'])) {
 		<div class="col-xs-10 col-md-6">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					Education for Class: <?php if(isset($_GET['classname'])){echo($_GET['classname']);
-						} ?>
+					<h3>Education for Class: <?php if(isset($_GET['classname'])){echo($_GET['classname']); } ?></h3>
 				</div>
 
 				<div class="panel-body">

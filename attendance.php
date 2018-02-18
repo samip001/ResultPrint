@@ -23,6 +23,7 @@ else{
 }	
 
 if (isset($_POST['attendance'])) {
+	$resultid = $_POST['resultid'];
 	if($others->checkSameResult('attendance',$_POST['resultid']) > 0){
 		$error = "Same Result for Attendace Already Exists. Try Next One";
 	}
@@ -30,7 +31,7 @@ if (isset($_POST['attendance'])) {
 		$fields = array('result_id' =>$_POST['resultid'],'present_day'=>$_POST['workday'],'absent_day'=>$_POST['absentday'] );
 		$others->saveStudentOthersResult('attendance',$fields);
 
-		header('Location:listresult.php?classname='.$classname.'&terminal='.$terminal.'&year='.$year);
+		header('Location:print.php?result='.$resultid);
 		exit();	
 	}
 }
@@ -48,8 +49,8 @@ if (isset($_POST['attendance'])) {
 		<div class="col-xs-10 col-md-6">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					Attendance for Class: <?php if(isset($_GET['classname'])){echo($_GET['classname']);
-						} ?>
+					<h3>Attendance for Class: <?php if(isset($_GET['classname'])){echo($_GET['classname']);
+						} ?></h3>
 				</div>
 				<div class="panel-body">
 				<?php

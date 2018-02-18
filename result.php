@@ -60,7 +60,7 @@
 		}
 		else{
 			// for displaying error
-			$error = "Result Already Exist with Same Terminal";
+			$error = $terminal->getTerminalName($_POST['terminal'])." Result already exist of ".$student->getStudent($_POST['studentid'])->student_name.".<br> Select Valid Student or Terminal Type.";
 		}
 		
 	}

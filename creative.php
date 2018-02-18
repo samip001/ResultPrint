@@ -24,6 +24,7 @@ else{
 }
 
 if (isset($_POST['creative'])) {
+	$resultid = $_POST['resultid'];
 	if($others->checkSameResult('creativity',$_POST['resultid']) > 0){
 		$error = "Same Result for Creativity Already Exists. Try Next Student";
 	}
@@ -31,7 +32,7 @@ if (isset($_POST['creative'])) {
 		$fields = array('result_id' =>$_POST['resultid'],'drawing'=>$_POST['drawing'],'handwriting'=>$_POST['handwriting'],'dance'=>$_POST['dance'],'music'=>$_POST['music'] );
 		$others->saveStudentOthersResult('creativity',$fields);
 
-		header('Location:listresult.php?classname='.$classname.'&terminal='.$terminal.'&year='.$year);
+		header('Location:print.php?result='.$resultid);
 		exit();	
 	}
 }
@@ -49,8 +50,8 @@ if (isset($_POST['creative'])) {
 		<div class="col-xs-10 col-md-6">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					Creativity for Class: <?php if(isset($_GET['classname'])){echo($_GET['classname']);
-						} ?>
+					<h3>Creativity for Class: <?php if(isset($_GET['classname'])){echo($_GET['classname']);
+						} ?></h3>
 				</div>
 				<div class="panel-body">
 				<?php

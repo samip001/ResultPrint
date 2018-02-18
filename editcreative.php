@@ -41,7 +41,7 @@ if (isset($_POST['editcreative'])) {
 		<div class="col-xs-10 col-md-6">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					Creativity for Class: <?php echo $result->getStudentFromResult($_GET['resultid'])->class_name; ?>
+					<h3>Creativity for Class: <?php echo $result->getStudentFromResult($_GET['resultid'])->class_name; ?></h3>
 				</div>
 				<div class="panel-body">
 				<?php

@@ -18,39 +18,32 @@
       <ul class="nav navbar-nav">
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Student <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="addstudent.php"><span class="glyphicon glyphicon-plus-sign"></span> Register Student</a></li>
+            <li><a href="addstudent.php"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;&nbsp;Register Student</a></li>
             <li class="divider"></li>
-            <li><a href="liststudent.php"><span class="glyphicon glyphicon-eye-open"></span> View Student</a></li>
+            <li><a href="liststudent.php"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;&nbsp;View Student</a></li>
             
           </ul>
         </li>
 
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Subject <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="addsubject.php"><span class="glyphicon glyphicon-plus-sign"></span> Add Subject</a></li>
+            <li><a href="addsubject.php"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;&nbsp;Add Subject</a></li>
             <li class="divider"></li>
-            <li><a href="listsubject.php"><span class="glyphicon glyphicon-eye-open"></span> View Subject List</a></li>
+            <li><a href="listsubject.php"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;&nbsp;View Subject List</a></li>
           </ul>
         </li>
 
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Class <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="addclass.php"><span class="glyphicon glyphicon-plus-sign"></span> New Class</a></li>
+            <li><a href="addclass.php"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;&nbsp;New Class</a></li>
             <li class="divider"></li>
-            <li><a href="classlist.php"><span class="glyphicon glyphicon-up"></span> ClassList O</a></li>
+            <li><a href="classlist.php"><span class="glyphicon glyphicon glyphicon-th-list"></span>&nbsp;&nbsp;List Class </a></li>
           </ul>
         </li>
 
-        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Result <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="classselect.php"><span class="glyphicon glyphicon-plus-sign"></span> Create Result</a></li>
-            
-          </ul>
-        </li>
-
-
-        <li><a href="schoolinfo.php"><span class="glyphicon glyphicon-file"></span> School Info</a></li>
-        <li><a href="listresult.php"><span class="glyphicon"></span> View Student Result</a></li>
+         <li><a href="classselect.php"></span> Result</a></li>
+        <li><a href="listresult.php"><span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;View Result</a></li>
+        <li><a href="schoolinfo.php"><span class="glyphicon glyphicon-file"></span>&nbsp;&nbsp;School Info</a></li>
         
       </ul>
       <!--

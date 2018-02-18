@@ -24,7 +24,7 @@
 	<div class="col-md-9">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<h2>School Info</h2>
+				<h2>School Information</h2>
 			</div>
 
 			<div class="panel-body text-center">

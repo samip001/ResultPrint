@@ -97,6 +97,10 @@
 						</tbody>
 					</table>
 				</div>
+
+				<div class="panel-footer">
+					<a href="addsubject.php" class="btn btn-sm btn-danger">Add New Subject</a>
+				</div>
 			</div>
 		</div>
 	</div>

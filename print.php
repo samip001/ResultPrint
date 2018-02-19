@@ -94,8 +94,8 @@ if (isset($_SESSION['resultdate'])) {
 <br>
 <br>
 
-<div class="container">
-    <div class="table-responsive">
+<div class="container" style="border: 3px solid black;">
+    <div class="table-responsive" >
         <table  class="table table-hover">
             <thead>
                 <tr>
@@ -175,9 +175,8 @@ if (isset($_SESSION['resultdate'])) {
             </tfoot>
         </table>
     </div>
-</div>
 
-<section id="valueeducation">
+    <section id="valueeducation">
     <div class="container">
         <div class="col-md-4" style="margin-right: 2px;">
             <table class="table" border="3">
@@ -476,6 +475,9 @@ if (isset($_SESSION['resultdate'])) {
         </div>
     </div>
 </section>
+</div>
+
+
 
 <!--Hide and show when all condition is met style="visibility: hidden;"-->
 <div class="printform" style="visibility:hidden; position: relative; border:3px solid black; height: 1000px; ">
@@ -552,7 +554,7 @@ if (isset($_SESSION['resultdate'])) {
                     $index = 1;
                     $count = count($studentResults);
                     
-                    while ( $row < 14) {
+                    while ( $row < 13) {
                         if($count > $row){
                             echo '<tr>
                                     <td>'.$index.'.</td>
@@ -611,7 +613,7 @@ if (isset($_SESSION['resultdate'])) {
     </div>
 
     <!--Others Section-->
-    <div id="otherssection" style="width: 725px; position: absolute; top: 600px; margin-left: 10px; font-size: 17px;">
+    <div id="otherssection" style="width: 725px; position: absolute; top: 580px; margin-left: 10px; font-size: 17px;">
         <!--Value Others-->
         <div style="float: left; margin-right: 15px; margin-left: 20px;">
             <table border="1" style="padding: 5px;">
@@ -766,7 +768,7 @@ if (isset($_SESSION['resultdate'])) {
     </div><!--Others Section-->
 
 
-    <div id="anothersection" style="position: absolute; top: 840px; margin-left: 10px; ">
+    <div id="anothersection" style="position: absolute; top: 825px; margin-left: 10px; ">
         <!--Info of result-->
         <div style="float: left; margin-left: 5px;">
             <ol style="font-size: 12px;">
@@ -847,17 +849,17 @@ if (isset($_SESSION['resultdate'])) {
 
      <!--Buttom Section-->
     <div style="position: absolute; top: 970px; font-size: 17px;">
-        <div style="float: left; margin-left:20px; margin-right: 80px; ">
+        <div style="float: left; margin-left:20px; margin-right: 70px; ">
             <b><i style="text-decoration: overline;">Class Teacher's Signature</i></b>
         </div>
 
-        <div style="float: left; margin-left: 20px; margin-right: 30px;">
+        <div style="float: left; margin-left: 20px; margin-right: 20px;">
             <b><i>Date: &nbsp;&nbsp;<?php if(isset($_SESSION['resultdate'])){
                     echo $_SESSION['resultdate'];
                 } ?></i></b>
         </div>
 
-        <div style="float: left; margin-left: 60px;">
+        <div style="float: left; margin-left: 70px;">
             <b><i style="text-decoration: overline;">Principal's Signature</i></b>
         </div>
     </div>

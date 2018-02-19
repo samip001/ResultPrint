@@ -31,19 +31,15 @@ if (isset($_POST['addclass'])) {
 				<?php
 					include 'includes/error.php';
 				?>
-
-				<form method="post">
-					<div class="form-group">
-						<label>Class: </label>
-						<input type="text" name="classname" class="form-control" required>
-					</div>
-					<input type="submit" name="addclass" class="btn btn-md btn-danger btn-block" value="Add Class">
-					
-				</form>
+					<form method="post">
+						<div class="form-group">
+							<label>Class: </label>
+							<input type="text" name="classname" class="form-control" required>
+						</div>
+						<input type="submit" name="addclass" class="btn btn-md btn-danger btn-block" value="Add Class">
+					</form>
 				</div>
 			</div>
-			
 		</div>
 	</div>
-
 </div>

@@ -1,4 +1,4 @@
-<link rel="icon" type="image/x-icon" href="assets/image/favicon.png">
+<link rel="icon" type="image/x-icon" href="assets/image/favico.ico">
 
 <?php
     include 'style.php';

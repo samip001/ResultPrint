@@ -851,7 +851,7 @@ if (isset($_SESSION['resultdate'])) {
             <b><i style="text-decoration: overline;">Class Teacher's Signature</i></b>
         </div>
 
-        <div style="float: left; margin-left: 30px; margin-right: 50px;">
+        <div style="float: left; margin-left: 20px; margin-right: 30px;">
             <b><i>Date: &nbsp;&nbsp;<?php if(isset($_SESSION['resultdate'])){
                     echo $_SESSION['resultdate'];
                 } ?></i></b>

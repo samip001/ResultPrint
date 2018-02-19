@@ -1,8 +1,9 @@
+<link rel="icon" type="image/x-icon" href="assets/image/favicon.png">
+
 <?php
     include 'style.php';
     include 'script.php';
 ?>
-
 <!-- NAVBAR WITH RESPONSIVE TOGGLE -->
  <nav class="navbar navbar-default">
   <div class="container-fluid">

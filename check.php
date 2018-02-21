@@ -141,16 +141,16 @@
 	
 // }
 
-        $classes = $class->getAllClasses();
-        // var_dump($classes);	
-        $allClass = array();
-        foreach ($classes as $clas) {
-        	array_push($allClass, $clas->class_name);
-        }
-        var_dump($allClass);
-        $newClass = $validator->upgradeClass($allClass,'9');
+        // $classes = $class->getAllClasses();
+        // // var_dump($classes);	
+        // $allClass = array();
+        // foreach ($classes as $clas) {
+        // 	array_push($allClass, $clas->class_name);
+        // }
+        // var_dump($allClass);
+        // $newClass = $validator->upgradeClass($allClass,'9');
 
-        var_dump($newClass);
+        // var_dump($newClass);
                 
 
 ?>

@@ -106,20 +106,20 @@ if (isset($_SESSION['resultdate'])) {
                     <th colspan="2"></th>                    
                     <th colspan="3"></th>                    
                     <th colspan="2"></th>                    
-                    <th colspan="6">Obtained Marks</th>                    
-                    <th colspan="6">Obtained Grade</th>
+                    <th colspan="6">Obtained Grade</th>                    
+                    <th colspan="6">Obtained Marks</th>
                     
                 </tr>
                 <tr>
                     <th colspan="2">S/N</th>                    
                     <th colspan="3">Subjects</th>                    
                     <th colspan="2">Credit Hour</th>                    
-                    <th colspan="2">Theory Marks</th>                    
-                    <th colspan="2">Practical Marks</th> 
-                    <th colspan="2">Total Marks</th>
                     <th colspan="2">Theory Grade</th>                    
                     <th colspan="2">Practical Grade</th> 
                     <th colspan="2">Total Grade</th> 
+                    <th colspan="2">Theory Marks</th>                    
+                    <th colspan="2">Practical Marks</th> 
+                    <th colspan="2">Total Marks</th>
                     <th colspan="2">Grade Point</th> 
                     <th>Edit</th>
                 </tr>
@@ -141,12 +141,12 @@ if (isset($_SESSION['resultdate'])) {
                                 <td colspan="2">'.$i.'.</td>
                                 <td colspan="3">'.$subject->getSubjectDetails($sturesult->subject_id)->subject_name.'</td>
                                 <td colspan="2">'.$subject->getSubjectDetails($sturesult->subject_id)->credit_hrs.'</td>
-                                <td colspan="2">'.$sturesult->theory_mark.'</td>
-                                <td colspan="2">'.$practical.'</td>
-                                <td colspan="2">'.$validator->calculateTotalToForm($sturesult->theory_mark,$sturesult->practical_mark).'</td>
                                 <td colspan="2">'.$sturesult->th_gpa.'</td>
                                 <td colspan="2">'.$sturesult->pr_gpa.'</td>
                                 <td colspan="2">'.$sturesult->total_gpa.'</td>
+                                <td colspan="2">'.$sturesult->theory_mark.'</td>
+                                <td colspan="2">'.$practical.'</td>
+                                <td colspan="2">'.$validator->calculateTotalToForm($sturesult->theory_mark,$sturesult->practical_mark).'</td>
                                 <td colspan="2">'.$validator->getGradePoint($sturesult->total_gpa).'</td>
                                 <td><a href="editresult.php?id='.$sturesult->id.'&subjectid='.$sturesult->subject_id.'&resultid='.$sturesult->result_id.'"><span class="glyphicon glyphicon-pencil"></span></a>
                                 </td>
@@ -539,9 +539,9 @@ if (isset($_SESSION['resultdate'])) {
                 <th rowspan="2">S/N</th>                    
                 <th rowspan="2" colspan="5" >Subjects</th>                    
                 <th rowspan="2">Credit Hour</th>                    
-                <th colspan="3">Obtained Marks</th>                    
+                <th colspan="3">Obtained Grade</th>                    
                 <th rowspan="2">Grade Point</th>                    
-                <th colspan="3">Obtained Grade</th>
+                <th colspan="3">Obtained Marks</th>
             </tr>
             <tr>
                 <th>Th</th>
@@ -574,13 +574,13 @@ if (isset($_SESSION['resultdate'])) {
                                     <td>'.$index.'.</td>
                                     <td colspan="5">'.$subject->getSubjectDetails($studentResults[$row]->subject_id)->subject_name.'</td>
                                     <td>'.$subject->getSubjectDetails($studentResults[$row]->subject_id)->credit_hrs.'</td>
-                                    <td>'.$studentResults[$row]->theory_mark.'</td>
-                                    <td>'.$practical.'</td>
-                                    <td>'.$validator->calculateTotalToForm($studentResults[$row]->theory_mark,$studentResults[$row]->practical_mark).'</td>
-                                    <td>'.$validator->getGradePoint($studentResults[$row]->total_gpa).'</td>
                                     <td>'.$studentResults[$row]->th_gpa.'</td>
                                     <td>'.$studentResults[$row]->pr_gpa.'</td>
                                     <td>'.$studentResults[$row]->total_gpa.'</td>
+                                    <td>'.$validator->getGradePoint($studentResults[$row]->total_gpa).'</td>
+                                    <td>'.$studentResults[$row]->theory_mark.'</td>
+                                    <td>'.$practical.'</td>
+                                    <td>'.$validator->calculateTotalToForm($studentResults[$row]->theory_mark,$studentResults[$row]->practical_mark).'</td>
                                 </tr>';
                                 $index++;
                                 $row++; 
@@ -752,14 +752,14 @@ if (isset($_SESSION['resultdate'])) {
                         <td>8.</td>
                         <td colspan="1">20 to Below 30</td>
                         <td>D</td>
-                        <td>0.8</td>
+                        <td>1.2</td>
                         <td>Insufficient</td>
                     </tr> 
                     <tr>
                         <td>9.</td>
                         <td colspan="1">0 to Below 20</td>
                         <td>E</td>
-                        <td>0</td>
+                        <td>0.8</td>
                         <td>Very Insufficient</td>
                     </tr>
                 </tbody>

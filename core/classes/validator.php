@@ -206,10 +206,10 @@ class Validator
 			$number = 1.6;
 		}
 		else if ($value == 'D') {
-			$number = 0.8;
+			$number = 1.2;
 		}
 		else if($value == 'E') {
-			$number = 0.0;
+			$number = 0.8;
 		}
 		else{
 			$number = 0.0;
@@ -237,10 +237,10 @@ class Validator
 		else if ($grade >1.6 && $grade <=2.0) {
 			$remarks = "Acceptance";
 		}
-		else if ($grade >0.8 && $grade <=1.6) {
+		else if ($grade >1.2 && $grade <=1.6) {
 			$remarks = "Partially Acceptance";
 		}
-		else if ($grade >0 && $grade <=0.8) {
+		else if ($grade >0.8 && $grade <=1.2) {
 			$remarks = "Insufficient";
 		}
 		else{

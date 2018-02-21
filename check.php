@@ -1,12 +1,14 @@
 <?php
 	include 'core/init.php';
-	$studentResults = $result->getDetailsStudentResult(2);
-	var_dump($studentResults);
-	print_r($studentResults);
+	
+	// $studentResults = $result->getDetailsStudentResult(2);
+	// var_dump($studentResults);
+	// print_r($studentResults);
 
-	echo count($studentResults);
-	echo "<br>".($studentResults[0])->subject_id;
-	// up to year 2150b.s
+	// echo count($studentResults);
+	// echo "<br>".($studentResults[0])->subject_id;
+	
+	// // up to year 2150b.s
 	// $year = 2073;
 	// $yearupto = array();
 	// for ($i=0; $i <78 ; $i++) { 
@@ -139,6 +141,16 @@
 	
 // }
 
-        
+        $classes = $class->getAllClasses();
+        // var_dump($classes);	
+        $allClass = array();
+        foreach ($classes as $clas) {
+        	array_push($allClass, $clas->class_name);
+        }
+        var_dump($allClass);
+        $newClass = $validator->upgradeClass($allClass,'9');
+
+        var_dump($newClass);
+                
 
 ?>

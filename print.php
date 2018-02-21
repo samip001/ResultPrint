@@ -31,6 +31,10 @@ if (isset($_GET['result']) ) {
         $att = $others->checkSameResult('attendance',$resultid)== intval(1) ? true:false;
         $cr = $others->checkSameResult('creativity',$resultid) == intval(1) ? true:false;
     }
+    else{
+        header('Location:listresult.php');
+        exit();
+    }
     
 }
 
@@ -477,11 +481,11 @@ if (isset($_SESSION['resultdate'])) {
 </section>
 </div>
 
-
+<br>
 
 <!--Hide and show when all condition is met style="visibility: hidden;"-->
-<div class="printform" style="visibility:hidden; position: relative; border:3px solid black; height: 1000px; ">
-  <img src="assets/image/m2.jpg" alt="School-Logo-goes-here" height="995px" width="755px" />
+<div class="printform" style="position: relative; border:3px solid black; height: 1000px;">
+  <img src="assets/image/mm.png" alt="School-Logo-goes-here" height="995px" width="755px" />
 
     <img id="schoolLogo" src="assets/image/schoollogo.png" style="position: absolute; left: 20px; top: 0px" />
         <div style="position: absolute; top: 5px; left: 140px;">
@@ -553,15 +557,25 @@ if (isset($_SESSION['resultdate'])) {
                     $row = 0;
                     $index = 1;
                     $count = count($studentResults);
+
+                        //check practical yes or no
+                        $practical = " ";
+                        if($subject->getSubjectDetails($sturesult->subject_id)->practical == 1){
+                            $practical = $sturesult->practical_mark;
+                        }
                     
                     while ( $row < 13) {
                         if($count > $row){
+                            $practical = " ";
+                            if($subject->getSubjectDetails($studentResults[$row]->subject_id)->practical == 1){
+                                $practical = $studentResults[$row]->practical_mark;
+                            }
                             echo '<tr>
                                     <td>'.$index.'.</td>
                                     <td colspan="5">'.$subject->getSubjectDetails($studentResults[$row]->subject_id)->subject_name.'</td>
                                     <td>'.$subject->getSubjectDetails($studentResults[$row]->subject_id)->credit_hrs.'</td>
                                     <td>'.$studentResults[$row]->theory_mark.'</td>
-                                    <td>'.$studentResults[$row]->practical_mark.'</td>
+                                    <td>'.$practical.'</td>
                                     <td>'.$validator->calculateTotalToForm($studentResults[$row]->theory_mark,$studentResults[$row]->practical_mark).'</td>
                                     <td>'.$validator->getGradePoint($studentResults[$row]->total_gpa).'</td>
                                     <td>'.$studentResults[$row]->th_gpa.'</td>
@@ -587,19 +601,6 @@ if (isset($_SESSION['resultdate'])) {
                                 $row++; 
                         }
                     }
-
-                     // echo '<tr style="">
-                     //                <td>.</td>
-                     //                <td colspan="5"> </td>
-                     //                <td> </td>
-                     //                <td> </td>
-                     //                <td> </td>
-                     //                <td> </td>
-                     //                <td> </td>
-                     //                <td> </td>
-                     //                <td> </td>
-                     //                <td> </td>
-                     //            </tr>';
                 ?>
             </tbody>
 
@@ -859,9 +860,36 @@ if (isset($_SESSION['resultdate'])) {
                 } ?></i></b>
         </div>
 
-        <div style="float: left; margin-left: 70px;">
+        <div style="float: left; margin-left: 90px;">
             <b><i style="text-decoration: overline;">Principal's Signature</i></b>
         </div>
+    </div>
+
+    <div style="position: absolute; top: 880px; font-size: 12px;">
+         <?php 
+            if ($result->getStudentFromResult($resultid)->terminal_id == 4) {
+                $classes = $class->getAllClasses();
+                $allClass = array();
+                foreach ($classes as $clas) {
+                    array_push($allClass, $clas->class_name);
+                }
+                $currentClass = $result->getStudentFromResult($resultid)->class_name;
+                $newClass = $validator->upgradeClass($allClass,$currentClass);
+
+                if ($newClass != null) {
+                    echo '<div style="float: left; margin-left: 500px; width: 240px;padding:5px;">
+                             <b><span style="text-decoration: underline;">Congratulations:</span></b><br>
+                             <b>You have been promoted to class '.$newClass.'</b>
+                            </div>';
+                }
+                else{
+                    echo '<div style="float: left; margin-left: 500px; width: 240px; padding:5px;">
+                             <b><span style="text-decoration: underline;">Congratulations:</span><br >On your next learning journey</b>
+                            </div>';
+                }
+            }
+
+        ?>
     </div>
 
 

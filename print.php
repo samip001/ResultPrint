@@ -484,7 +484,7 @@ if (isset($_SESSION['resultdate'])) {
 <br>
 
 <!--Hide and show when all condition is met style="visibility: hidden;"-->
-<div class="printform" style="position: relative; border:3px solid black; height: 1000px;">
+<div class="printform" style="visibility: hidden;position: relative; border:3px solid black; height: 1000px;">
   <img src="assets/image/mm.png" alt="School-Logo-goes-here" height="995px" width="755px" />
 
     <img id="schoolLogo" src="assets/image/schoollogo.png" style="position: absolute; left: 20px; top: 0px" />
